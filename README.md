@@ -1,4 +1,4 @@
-# service-data
+# service-data为云雀系统数据管理系统
 产生错误建议重新rebuild一下工程
 ##  离线文件生成借鉴于  
 > swagger生成离线文件，转载于https://blog.csdn.net/Alexshi5/article/details/89606411  
