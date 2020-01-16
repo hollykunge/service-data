@@ -1,0 +1,45 @@
+server:
+  port: 8772
+spring:
+  profiles:
+    active: dev
+  application:
+    name: service-data
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+    default-property-inclusion: non_null
+  data:
+    mongodb:
+      host: 192.168.1.205
+      port: 27017
+      database: lark-data # mongodb的连接的数据库
+#redis-cache 相关
+redis:
+  pool:
+    maxActive: 300
+    maxIdle: 100
+    maxWait: 10000
+    #需要修改地址
+#  host: ${REDIS_HOST:127.0.0.1}
+  host: ${REDIS_HOST:192.168.1.205}
+  port:  ${REDIS_PORT:6379}
+  password: 123456
+  timeout: 20000
+  # 服务或应用名
+  sysName: lark_data
+  enable: true
+  database: 5
+
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+logging:
+  level:
+    com.github.hollykunge.security.data.mapper: debug
+    tk.mybatis: debug
+
+##git创建仓库存放在服务器上的地址
+git:
+  repository:
+    address: C:\\lark_repo\\
+    defultMergeBranch: dev
